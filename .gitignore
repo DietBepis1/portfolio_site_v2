@@ -1,0 +1,7 @@
+#You know the drill
+
+#node modules
+node_modules/
+
+#DB setup stuff
+config/default.json
