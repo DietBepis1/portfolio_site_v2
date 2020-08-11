@@ -1,0 +1,219 @@
+/*Carousel track and basic div styling*/
+.carousel {
+    position: relative;
+    height: 800px;
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel_track-container {
+    background: lightgreen;
+    height: 100%;
+    position: relative;
+}
+
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 10px 20px 40px rgba(0,0,0,.4);
+}
+
+/*Carousel popup items*/
+.carousel_item_desc {
+    background: rgba(176,178,180,.85);
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    width: 100%;
+}
+
+.carousel_item_button {
+    background-color: rgba(176,178,180,0);
+    font-family: 'Lato', sans-serif;
+    text-align: start;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 16px;;
+    border-style: solid none solid;
+    border-color: rgba(25,25,25,1);
+    border-width: 1px;
+}
+
+.carousel_item_button_2 {
+    background-color: rgba(176,178,180,0);
+    font-family: 'Lato', sans-serif;
+    text-align: start;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 16px;
+    border-style: none none solid;
+    border-color: rgba(25,25,25,1);
+    border-width: 1px;
+}
+
+.carousel_item_button:hover, .carousel_item_button_2:hover,
+.carousel_item_button:focus, .carousel_item_button_2:focus {
+    background-color: rgba(25,25,25,1);
+    color: #fff;
+    border-color: rgba(25,25,25,1);
+}
+
+.desc_title {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.desc_blurb {
+    margin: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    text-align: start;
+}
+
+/*Carousel direction and circle buttons*/
+.carousel_button_left {
+    position: absolute;
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+}
+
+.carousel_button_right {
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+}
+
+.carousel_button_left img {
+    width: 52px;
+}
+
+.carousel_button_right img {
+    width: 52px;
+}
+
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+}
+
+/*styling for the circle buttons below the carousel.
+The current slide will have it's corresponding button
+darken.*/
+.carousel_indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(25,25,25,.6);
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+.carousel_indicator_current-slide {
+    border: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(25,25,25,1);
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 1200px) {
+    .desc_blurb {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .carousel {
+        position: relative;
+        height: 800px;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .carousel_item_desc {
+        background: rgba(176,178,180,.85);
+        position: absolute;
+        top: 40%;
+        height: 60%;
+        width: 100%;
+    }
+
+    .desc_blurb {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel {
+        position: relative;
+        height: 800px;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .carousel_item_desc {
+        background: rgba(176,178,180,.85);
+        position: absolute;
+        top: 30%;
+        height: 70%;
+        width: 100%;
+    }
+
+    .desc_blurb {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel_item_desc {
+        background: rgba(176,178,180,.85);
+        position: absolute;
+        top: 20%;
+        height: 80%;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+    .carousel_item_desc {
+        background: rgba(176,178,180,.85);
+        position: absolute;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+    }
+
+}

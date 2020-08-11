@@ -1,0 +1,53 @@
+/*Styles for Header.js, which controls the fixed image area*/
+.master {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.background {
+    background: url('./media/splash2.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+/* media queries */
+@media only screen and (max-width: 1050px) {
+    .background {
+        background: url('./media/splash_aux_800p.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+    
+    .title {
+        font-size: 2.5em;
+    }
+}
+
+
+/* other bg settings 
+background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+*/
