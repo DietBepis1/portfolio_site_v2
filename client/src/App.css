@@ -5,3 +5,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: url('components/media/bg1000x1500.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 1024px) {
+    body {
+      background: url('components/media/splash5.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
+}

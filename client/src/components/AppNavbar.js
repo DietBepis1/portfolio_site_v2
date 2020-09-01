@@ -10,7 +10,8 @@ import {
     Container
 } from 'reactstrap';
 import './AppNavbar.css';
-
+import resume from './media/resume2020.4.pdf';
+import './ContactModal.js';
 
 class AppNavbar extends Component {
     constructor(props) {
@@ -31,24 +32,24 @@ class AppNavbar extends Component {
     render() {
         return (
             <div>
-                <Container className='underlay' fluid={true}>
-                    <Navbar light expand='sm'>
+                <Container fluid={true}>
+                    <Navbar light expand='sm' fixed='top' className='underlay'>
                         <NavbarBrand className='brand'>piludu.io</NavbarBrand>
                         <NavbarToggler onClick={this.toggle.bind(this)}/>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className='ml-auto' navbar>
                                 <NavItem>
-                                    <NavLink style ={{color: '#191919'}} className='link-style' href='#'>Github</NavLink>
+                                    <NavLink style ={{color: '#191919'}} className='link-style' href='https:/github.com/dietbepis1'>Github</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink style ={{color: '#191919'}} className='link-style' href='#'>LinkedIn</NavLink>
+                                    <NavLink style ={{color: '#191919'}} className='link-style' href='https://www.linkedin.com/in/glenn-piludu-0b1401139/'>LinkedIn</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink style ={{color: '#191919'}} className='link-style' href='#'>Resume</NavLink>
+                                    <NavLink style ={{color: '#191919'}} className='link-style' href={resume} target='_blank'>Resume</NavLink>
                                 </NavItem>
-                                <NavItem>
-                                    <NavLink style ={{color: '#191919'}} className='link-style' href='#'>Contact Me</NavLink>
-                                </NavItem>
+                                {/*<NavItem>
+                                    <ContactModal style={{fontSize: '1rem'}}/>
+                                </NavItem>*/}
                             </Nav>
                         </Collapse>
                     </Navbar>

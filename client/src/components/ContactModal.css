@@ -1,0 +1,58 @@
+/*
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+These two settings prevent a bug
+where the background image
+'jumps' off the page. It's very jarring
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+*/
+html {
+    overflow-y: scroll !important;
+}
+
+.modal-open {
+    padding-right: 0 !important;
+}
+
+
+.contact__modal-btn {
+    background: transparent;
+    border: none;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contact__modal-btn:hover, .contact__modal-btn:focus {
+    outline: none;
+    color: rgb(250, 172, 4);
+}
+
+.modal__style {
+    background-color: rgba(176,178,180,.85);
+}
+
+.modal__header {
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+
+.modal__body {
+    font-family: 'Lato', sans-serif;
+    background-color: rgba(176,178,180,.85) !important;
+    opacity: .85 !important;
+    border-radius: none;
+}
+
+.modal__btn-exit {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    color: rgba(25,25,25,1);
+    background: transparent;
+    border: none;
+}
+
+.modal__btn-exit:hover, .modal__btn-exit:focus {
+    color:rgba(212,71,49,1);
+}

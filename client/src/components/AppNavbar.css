@@ -1,4 +1,7 @@
 /*Navbar styling*/
+.nav-bar {
+    position: fixed;
+}
 
 .brand {
     font-family: 'Dosis', sans-serif;

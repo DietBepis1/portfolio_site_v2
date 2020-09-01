@@ -1,64 +1,61 @@
 import React, { Component } from 'react'
 
+//import react-transitions-group for animations
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
+
+//axios handles grabbing items from the db
+import axios from 'axios';
+
+//import other components
+import CarouselModal from './CarouselModal.js'
+
 //import styling
 import './Carousel.css';
 
 class Carousel extends Component {
-    constructor(props) {
+    constructor(props){
         super(props);
 
         this.state = {
             carouselIndex: 0,
             isActive: false,
-            about: {
-                name: 'Glenn Piludu',
-                email: 'gpiludu@gmail.com',
-                phone: '(574) 344-9307',
-                school: 'BSc Mathematics, Indiana University',
-                tech: ['React', 'JavaScript', 'Python', 'MongoDB', 'SQL'],
-                picture: require('./media/musclecat.jpg')
-            },
-
+    
             prjItem: [{
-                    title: 'Test 1',
+                    _id: 0,
+                    title: 'piludu.io (2020)',
                     displayedDate: '2020',
-                    description: placeholder,
-                    projectURL: 'https://www.playstation.com/en-us/',
-                    gitURL: 'https://www.playstation.com/en-us/',
-                    picURL: require('./media/splash3.jpg')
+                    description: 'This site was built with the React, NodeJs, ExpressJs, and MongoDB. I used the React Transtion Group library for the animations. It was my first serious React Project and I am pretty excited at how it turned out.',
+                    projectURL: 'https://piludu.io',
+                    gitURL: 'https://github.com/DietBepis1/portfolio_site_v2',
+                    picURL: require('./media/splash3.jpg'),
+                    uses: 'Node, Express, React, MongoDB, Reactstrap'
                 },
                 {
-                    title: 'Test 2',
+                    _id: 1,
+                    title: 'Favorites List App (2020)',
                     displayedDate: '2020',
-                    description: placeholder,
-                    projectURL: 'https://www.playstation.com/en-us/',
-                    gitURL: 'https://www.playstation.com/en-us/',
-                    picURL: require('./media/splash4.jpg')
-
+                    description: 'I built this app with React, NodeJS, ExpressJs, and MongoDb. The styling was done with Reactstrap. I built it to learn the Mern stack. It does every CRUD operation and visitors can add or delete items.',
+                    projectURL: 'http://glenns-favorites-list.herokuapp.com',
+                    gitURL: 'https://github.com/DietBepis1/favorites-list',
+                    picURL: require('./media/favoriteslist.JPG'),
+                    uses: 'Node, Express, React, MongoDB, Reactstrap'
+    
                 },
                 {
-                    title: 'Test 3',
+                    _id: 2,
+                    title: 'Freight Calculator (2020)',
                     displayedDate: '2020',
-                    description: placeholder,
-                    projectURL: 'https://www.playstation.com/en-us/',
-                    gitURL: 'https://www.playstation.com/en-us/',
-                    picURL: require('./media/splash5.jpg')
-
+                    description: 'I worked on this project during my internship at Steel Warehouse. This calculator assists SW\'s sales team to create competitive bids for business. The calculator sits alongside other Sisense widgets for easy use. I constructed the datasets powering the calculator using SQL, Excel, and a bit of Python. There is also some custom JavaScript powering the calculator\'s location filters.',
+                    projectURL: '',
+                    gitURL: '',
+                    picURL: require('./media/dashboard.PNG'),
+                    uses: 'Python, SQL, JavaScript, Excel, Sisense'
                 },
-                {
-                    title: 'Test 4',
-                    displayedDate: '2020',
-                    description: placeholder,
-                    projectURL: 'https://www.playstation.com/en-us/',
-                    gitURL: 'https://www.playstation.com/en-us/',
-                    picURL: require('./media/musclecat.jpg')
-
-                }
             ]
         };
-
+    
     }
-
+    
     //move active carousel slide backward by one when clicking the back arrows
     slideBack = () => {
         //console.log(`${this.state.carouselIndex}`)
@@ -89,6 +86,13 @@ class Carousel extends Component {
         }
     }
 
+    toggleInfo = () => {
+        this.setState({
+            infoIsExpanded: !this.state.infoIsExpanded
+        })
+        console.log(this.state.infoIsExpanded);
+    }
+
     //jump to the nth slide by clicking the nth button
     jumpTo = (index) => {
         this.setState({
@@ -96,6 +100,18 @@ class Carousel extends Component {
             isActive: true
         })
     }
+
+    //gets items for display
+    /*componentDidMount() {
+        axios.get('/api/projects')
+        .then(res => {
+            const items = [...res.data]
+            this.setState({
+                prjItem: items
+            })
+        })
+        .catch(err => {console.log(err)})
+    }*/
     
     
     render() {
@@ -103,45 +119,90 @@ class Carousel extends Component {
         let buttonIndex = [...this.state.prjItem.keys()]
 
         return (
-            <div style={{marginTop: '6vh'}}>
-                <div className="carousel">
+            <div className="carousel">
 
-                    <button className='carousel_button_left' onClick={this.slideBack}>
-                        <img src={require('./media/back.svg')} alt=''/>
-                    </button>
-                    <div className="carousel_track-container">
-                        <ul className="carousel_track">
+                <button className="carousel__button-left" onClick={this.slideBack}>
+                    <img src={require('./media/back.svg')} alt=''/>
+                </button>
 
-                            <li className="carousel_slide" ref={this.activeSlide}>
+                <SwitchTransition>
+                    <CSSTransition
+                    key={this.state.prjItem[this.state.carouselIndex]._id}
+                    timeout={300}
+                    classNames={'fade'}
+                    >
+                        <div className="carousel__display">
+
                                 <img src={this.state.prjItem[this.state.carouselIndex].picURL}
-                                className='carousel_image' alt=''/>
-                                <div className='carousel_item_desc'>
-                                    <h3 className='desc_title'>{this.state.prjItem[this.state.carouselIndex].title}</h3>
-                                    <button className='carousel_item_button'>Github</button>
-                                    <br/>
-                                    <button className='carousel_item_button_2'>Live</button>
-                                    <div className="desc_blurb">{this.state.prjItem[this.state.carouselIndex].description}</div>
-                                </div>
-                            </li>
+                                     
+                                     alt="" 
+                                     className="carousel__display-img"
+                                />
 
-                        </ul>
-                    </div>
-                    <button className='carousel_button_right'>
-                        <img src={require('./media/forward.svg')} onClick={this.slideForward} alt=''/>
-                    </button>
+                        </div>
+                    </CSSTransition>
+                </SwitchTransition>
 
-                    <div className="carousel_nav">
-                        {buttonIndex.map(index => {
-                            return <button 
-                                    key={index} 
-                                    onClick={this.jumpTo.bind(this, index)} 
-                                    className={(this.state.isActive && this.state.carouselIndex===index)||this.state.carouselIndex===index? 'carousel_indicator_current-slide':'carousel_indicator'}
-                                    >
-                                    </button>
-                        })}
+
+                <SwitchTransition>
+                    <CSSTransition
+                    key={this.state.prjItem[this.state.carouselIndex]._id}
+                    timeout={500}
+                    classNames={'fade__info'}
+                    >
+                <div className='carousel__display-info'>
+                    <div  className="info__title">
+                        <h3>
+                            {this.state.prjItem[this.state.carouselIndex].title}
+                        </h3>
+                        <div className='info__modal'>
+                            <CarouselModal description={this.state.prjItem[this.state.carouselIndex]}/>
+                        </div>
                     </div>
+                    
+                    <a type='button'
+                       href={this.state.prjItem[this.state.carouselIndex].gitURL}
+                       className={this.state.prjItem[this.state.carouselIndex].gitURL?
+                       'info__button-1':'info__button-1--inactive'}
+                       target='_blank'
+                       rel='noopener noreferrer'
+                    >
+                        Github
+                    </a>
+
+                    
+
+                    <a type='button'
+                       href={this.state.prjItem[this.state.carouselIndex].projectURL}
+                       className={this.state.prjItem[this.state.carouselIndex].projectURL?
+                       'info__button-2':'info__button-2--inactive'}
+                       target='_blank'
+                       rel='noopener noreferrer'
+                    >
+                       Live
+                    </a>
+
                 </div>
+                    </CSSTransition>
+                </SwitchTransition>
 
+                <button className="carousel__button-right" onClick={this.slideForward}>
+                    <img src={require('./media/forward.svg')} alt=''/>
+                </button>
+
+                {/*Controls circle buttons at bottom of carousel */}
+                <div className="carousel__nav">
+                    {buttonIndex.map(index => {
+                        return( 
+                            <button 
+                            key={index} 
+                            onClick={this.jumpTo.bind(this, index)} 
+                            className={(this.state.isActive && this.state.carouselIndex===index)||this.state.carouselIndex===index? 'carousel_indicator_current-slide':'carousel_indicator'}
+                            >
+                            </button>
+                        )
+                    })}
+                </div>
             </div>
         )
     }
