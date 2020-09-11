@@ -57,8 +57,8 @@ class Header extends Component {
     }
 }
 
-const bodyParagraph1 = 'I am a software developer who loves to tinker with all things tech. One of my favorite childhood memories involves taking my dad’s old DOS machine apart and then trying to get games to run on it. Most recently, I have taught myself the MERN stack and really enjoyed learning about it. My favorite type of programming is web development, but I am also interested in using computers for science and machine learning.';
-const bodyParagraph2 = 'Beside my love of computers, I have a BSc in Mathematics from Indiana University I\'ve also spent many years selling real estate, so I know how to deliver for clients. You can check out some of my recent projects below or at my github link in the navbar.'
+const bodyParagraph1 = 'I am a software engineer who loves all things tech. Since I was very young, I have been taking computers apart and tinkering with them. As I was finishing college, I discovered that I  really liked programming computers as well. Most recently, I have had a ton of fun teaching myself React and the MERN stack.';
+const bodyParagraph2 = 'In addition to my skills in programming, I hold a BSc in Mathematics from Indiana University. I’ve also spent many years selling real estate, so I know how to deliver to clients. Please check some of my projects below, or at my github link in the navbar.'
 const callToAction = <p><b>I am currently open for projects or job opportunities</b> and would love to hear from you!</p>;
 
 export default Header;
