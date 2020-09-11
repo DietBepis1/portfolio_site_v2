@@ -8,7 +8,6 @@ const db = config.get('mongoURI');
 connectSettings = {
     'useNewUrlParser': true,
     'useUnifiedTopology': true,
-    'useFindandModify': false
 }
 
 const connectDB = async () => {

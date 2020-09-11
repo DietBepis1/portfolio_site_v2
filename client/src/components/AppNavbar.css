@@ -1,0 +1,21 @@
+/*Navbar styling*/
+.nav-bar {
+    position: fixed;
+}
+
+.brand {
+    font-family: 'Dosis', sans-serif;
+    color: #191919;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.link-style {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+
+}
+
+.underlay {
+    background-color:  rgba(176,178,180, .45);
+}

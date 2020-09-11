@@ -29,9 +29,9 @@ const projectItem = new Schema({
         type: mongoose.SchemaTypes.Url,
         required: false
     },
-    picURL: {
-        type: mongoose.SchemaTypes.Url,
-        required: false
+    uses: {
+        type: String,
+        required: true
     }
     
 })

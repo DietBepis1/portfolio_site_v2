@@ -1,0 +1,162 @@
+/*Styles for HeaderJS, which is the main part of the site*/
+:root {
+    font-size: 16px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+/*Hero Section*/
+.hero {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 100vh;
+}
+
+.hero__block {
+    display: grid;
+    grid-template-rows: 2fr auto;
+    grid-column: 1 / -1;
+    grid-row: 6 / auto;
+    background: rgba(42, 86, 80, .98);
+}
+
+.hero__block-title {
+    text-align: center;
+    letter-spacing: .8rem;
+    font-family: 'Dosis', sans-serif;
+    color: rgba(25,25,25,1);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.break {
+    margin: 0 0 1rem;;
+}
+
+.hero__block-body p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    margin: 0 1rem 1rem;
+}
+
+.hero__block-btn {
+    justify-self: center;
+    padding-bottom: 1rem;
+}
+
+.hero__block-btn-style {
+    background: rgba(42, 86, 80, 0);
+    font-family: 'Dosis', sans-serif;
+    color: rgba(25,25,25,1);
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+}
+
+.hero__block-btn-style:hover {
+    color: rgb(250, 172, 4);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+}
+
+
+/*Carousel div*/
+.projects {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr auto;
+    background: rgba(42, 86, 80, .98);
+}
+
+.projects-title {
+    background: rgba(25,25,25,1);
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: .35rem;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.projects-carousel {
+    grid-column: 1 / -1;
+    grid-row: 2 / auto;
+}
+
+/*Footer stuff*/
+.footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background: rgba(176,178,180,.75);
+}
+
+.footer-credits {
+    font-family: 'Lato', sans-serif;
+    font-size: .75rem;
+    text-align: center;
+    margin: 0;
+}
+
+/*Media Queries*/
+/*>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<*/
+/*>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<*/
+@media screen and (max-width: 500px) {
+    .hero__block-title {
+        text-align: center;
+        letter-spacing: .70rem;
+        font-family: 'Dosis', sans-serif;
+        color: rgba(25,25,25,1);
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero__block {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        grid-column: 6 / -1;
+        grid-row: 6 / auto;
+        background: rgba(42, 86, 80, .98);
+        border-radius: 35px 0 0 35px;
+    }
+
+    .hero__block-title {
+        text-align: start;
+        letter-spacing: .8rem;
+        font-family: 'Dosis', sans-serif;
+        color: rgba(25,25,25,1);
+        font-size: 3.5rem;
+        font-weight: 600;
+        padding-left: 2rem;
+    }
+    
+    .break {
+        margin: 0 0 1rem;;
+    }
+    
+    .hero__block-body p {
+        font-family: 'Lato', sans-serif;
+        font-size: 1rem;
+        margin: 0 1rem 1rem;
+        padding-left: 1.35rem;
+    }
+
+    .projects-title {
+        background: rgba(25,25,25,1);
+        color: #fff;
+        font-family: 'Dosis', sans-serif;
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing: .35rem;
+        text-align: center;
+        grid-column: 1 / -1;
+    }
+}
