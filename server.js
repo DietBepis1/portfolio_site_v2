@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 //init express
@@ -12,15 +13,17 @@ const connectDB = require('./config/db.js');
 connectDB();
 
 //import and use routes
-//for the react build folder
-const path = require('path');
-app.use(express.static(path.join(__dirname, 'build')));
-
 const projects = require('./routes/api/projects.js');
 app.use('/api/projects', projects);
 
 const about = require('./routes/api/about.js');
 app.use('/api/about', about);
+
+//serve static assets in production
+app.use(express.static('client/build'));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+})
 
 //listen on PORT
 const PORT = process.env.PORT || 5000;
