@@ -40,7 +40,7 @@ class ContactModal extends Component {
                         <hr></hr>
                         <h4><b>Phone:</b> {this.props.about.phone}</h4>
                         <h4><b>Email:</b> {this.props.about.email}</h4>
-                        <h4><b>Tech I've used:</b> ReactJS, NodeJS, ExpressJS, MongoDB, Python, Django, SQL</h4>
+                        <h4><b>Tech I've used:</b> React.js, Vue.js, Node.js, Express.js, MongoDB, Python, Django, SQL</h4>
                         <h4><b>Education:</b> {this.props.about.school}</h4>
                         <div className="modal__btn">
                             <button className="modal__btn-exit" onClick={this.toggle}>x</button>

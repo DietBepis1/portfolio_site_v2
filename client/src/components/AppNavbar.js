@@ -10,7 +10,7 @@ import {
     Container
 } from 'reactstrap';
 import './AppNavbar.css';
-import resume from './media/resume 2020.5.pdf';
+import resume from './media/resume 2020.pdf';
 import './ContactModal.js';
 
 class AppNavbar extends Component {

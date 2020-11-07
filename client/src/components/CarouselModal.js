@@ -30,14 +30,15 @@ class CarouselModal extends Component {
                 isOpen={this.state.modal}
                 toggle={this.toggle}
                 size='lg'
+                className='modal__style'
                 >
-                    <ModalBody className='modal__style'>
+                    <ModalBody className='modal__body'>
                         <h2 className='modal__head'>{this.props.description.title}</h2>
                         <hr/>
-                        <p className='modal__body'>
+                        <p>
                             {this.props.description.description}
                         </p>
-                        <p className='modal__body'>
+                        <p>
                             <em><b>Uses:</b> {this.props.description.uses}</em>
                         </p>
                         <div className="modal__btn">

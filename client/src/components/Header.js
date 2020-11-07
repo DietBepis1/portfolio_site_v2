@@ -16,8 +16,8 @@ class Header extends Component {
                 name: 'Glenn Piludu',
                 email: 'gpiludu@gmail.com',
                 phone: '(574) 344-9307',
-                school: 'BSc Mathematics, Indiana University',
-                tech: ['React', 'JavaScript', 'Python', 'MongoDB', 'SQL'],
+                school: 'BS Mathematics, Indiana University',
+                tech: ['React', 'Vue', 'JavaScript', 'Python', 'MongoDB', 'SQL'],
                 picture: null
             },
         }
@@ -58,7 +58,7 @@ class Header extends Component {
 }
 
 const bodyParagraph1 = 'I am a software engineer who loves all things tech. Since I was very young, I have been taking computers apart and tinkering with them. As I was finishing college, I discovered that I  really liked programming computers as well. Most recently, I have had a ton of fun teaching myself React and the MERN stack.';
-const bodyParagraph2 = 'In addition to my skills in programming, I hold a BSc in Mathematics from Indiana University. I’ve also spent many years selling real estate, so I know how to deliver to clients. Please check some of my projects below, or at my github link in the navbar.'
+const bodyParagraph2 = 'In addition to my skills in programming, I hold a BS in Mathematics from Indiana University. I’ve also spent many years selling real estate, so I know how to deliver to clients. Please check some of my projects below, or at my github link in the navbar.'
 const callToAction = <p><b>I am currently open for projects or job opportunities</b> and would love to hear from you!</p>;
 
 export default Header;

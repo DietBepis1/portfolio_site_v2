@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 //init express
@@ -13,6 +12,10 @@ const connectDB = require('./config/db.js');
 connectDB();
 
 //import and use routes
+//for the react build folder
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'build')));
+
 const projects = require('./routes/api/projects.js');
 app.use('/api/projects', projects);
 
